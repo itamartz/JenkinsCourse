@@ -49,17 +49,17 @@ pipeline {
          }
       }//stage('Python')
 	  
-      stage('Deploy') {
+      stage('Bash') {
 	     when {
 			expression {
-				env.Language=="Deploy" || env.Language=="All"
+				env.Language=="Bash" || env.Language=="All"
 			}
 		 }
          steps {
-            echo 'Deploy stage running'
+            echo 'Bash stage running'
          }
 		 
-      }//stage('Deploy')
+      }//stage('Bash')
       
    }//stages
    
