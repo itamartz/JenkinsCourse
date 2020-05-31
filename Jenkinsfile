@@ -24,7 +24,7 @@ pipeline {
       stage('All') {
 		 when {
 			expression {
-				env.Language="All"
+				${env.Language}="All"
 			}
 		 }
          steps {
