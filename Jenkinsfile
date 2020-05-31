@@ -11,6 +11,11 @@ pipeline {
 	  
 	  stage("Env Variables") {
             steps {
+				when { 
+					expression {
+						BRANCH_NAME == 'dev'
+					}
+				}
                 sh "printenv"
             }
 			
