@@ -2,7 +2,7 @@ pipeline {
   //agent { node { label 'slave01' } }
   agent any
   environment{
-	SERVER_CREDENTIALS = credentials('SECRET_TEXT')
+	//SERVER_CREDENTIALS = credentials('SECRET_TEXT')
   }
 
    stages {
