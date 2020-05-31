@@ -9,6 +9,13 @@ pipeline {
         } 
       }//stage('Clone Sources')
 	  
+	  stage("Env Variables") {
+            steps {
+                sh "printenv"
+            }
+			
+        }//stage("Env Variables")
+	  
       stage('All') {
          steps {
             echo 'Build process..'
