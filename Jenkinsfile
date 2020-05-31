@@ -16,7 +16,7 @@ pipeline {
 	  
 	  stage("Env Variables") {
             steps {
-				echo "${env.Language}"
+				//echo "${env.Language}"
                 sh "printenv"
             }
 			
@@ -39,6 +39,11 @@ pipeline {
       }//stage('All')
 	  
       stage('Python') {
+	     when {
+			expression {
+				env.Language=="Python"
+			}
+		 }
          steps {
             echo 'Python stage running'
          }
