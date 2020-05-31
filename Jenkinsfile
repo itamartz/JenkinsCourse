@@ -60,6 +60,18 @@ pipeline {
          }
 		 
       }//stage('Bash')
+	  
+	  stage('C') {
+	     when {
+			expression {
+				env.Language=="C" || env.Language=="All"
+			}
+		 }
+         steps {
+            echo 'C stage running'
+         }
+		 
+      }//stage('C')
       
    }//stages
    
