@@ -41,7 +41,7 @@ pipeline {
       stage('Python') {
 	     when {
 			expression {
-				env.Language=="Python"
+				env.Language=="Python" || env.Language=="All"
 			}
 		 }
          steps {
