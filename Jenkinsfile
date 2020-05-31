@@ -72,6 +72,21 @@ pipeline {
          }
 		 
       }//stage('C')
+	  
+	  stage('Powershell') {
+			agent {
+                label 'Windows'
+            }
+	     when {
+			expression {
+				env.Language=="Powershell" || env.Language=="All"
+			}
+		 }
+         steps {
+            echo 'Powershell stage running'
+         }
+		 
+      }//stage('Powershell')
       
    }//stages
    
