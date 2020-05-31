@@ -3,6 +3,7 @@ pipeline {
   agent any
   environment{
 	//SERVER_CREDENTIALS = credentials('SECRET_TEXT')
+	VERSION: "1.0.0.1"
   }
 
    stages {
