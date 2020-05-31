@@ -14,7 +14,8 @@ pipeline {
       }//stage('Clone Sources')
 	  
 	  stage("Env Variables") {
-            steps {			
+            steps {
+				echo "${env.Language}"
                 sh "printenv"
             }
 			
@@ -23,7 +24,7 @@ pipeline {
       stage('All') {
 		 when {
 			expression {
-				params.Language="All"
+				env.Language="All"
 			}
 		 }
          steps {
