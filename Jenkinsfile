@@ -8,7 +8,7 @@ pipeline {
         } 
       }//stage('Clone Sources')
 	  
-      stage('Build') {
+      stage('All') {
          steps {
             echo 'Build process..'
             sh 'echo "My first pipeline"'
@@ -17,13 +17,13 @@ pipeline {
                 ls -la ~
             '''
          }
-      }//stage('Build')
+      }//stage('All')
 	  
-      stage('Test') {
+      stage('Python') {
          steps {
             echo 'Test process..'
          }
-      }//stage('Test')
+      }//stage('Python')
 	  
       stage('Deploy') {
          steps {
