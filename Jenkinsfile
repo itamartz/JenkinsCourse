@@ -50,6 +50,11 @@ pipeline {
       }//stage('Python')
 	  
       stage('Deploy') {
+	     when {
+			expression {
+				env.Language=="Deploy" || env.Language=="All"
+			}
+		 }
          steps {
             echo 'Deploy stage running'
          }
