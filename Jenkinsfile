@@ -21,6 +21,11 @@ pipeline {
         }//stage("Env Variables")
 	  
       stage('All') {
+		 when {
+			expression {
+				params.Language=All
+			}
+		 }
          steps {
             echo 'Build process..'
             sh 'echo "My first pipeline"'
