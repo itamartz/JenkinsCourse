@@ -14,8 +14,7 @@ pipeline {
       }//stage('Clone Sources')
 	  
 	  stage("Env Variables") {
-            steps {
-				echo "SERVER CREDENTIALS: ${SERVER_CREDENTIALS}"
+            steps {			
                 sh "printenv"
             }
 			
