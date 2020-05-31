@@ -4,6 +4,7 @@ pipeline {
   environment{
 	//SERVER_CREDENTIALS = credentials('SECRET_TEXT')
 	VERSION = "1.0.0.1"
+	LanguageVAR = ${env.Language}
   }
 
    stages {
@@ -24,7 +25,7 @@ pipeline {
       stage('All') {
 		 when {
 			expression {
-				${env.Language}=="All"
+				LanguageVAR=="All"
 			}
 		 }
          steps {
