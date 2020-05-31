@@ -1,6 +1,9 @@
 pipeline {
   //agent { node { label 'slave01' } }
   agent any
+  environment{
+	SERVER_CREDENTIALS = credentials('SECRET_TEXT')
+  }
 
    stages {
       stage('Clone Sources') {
@@ -11,11 +14,7 @@ pipeline {
 	  
 	  stage("Env Variables") {
             steps {
-				when { 
-					expression {
-						BRANCH_NAME == 'dev'
-					}
-				}
+				echo "SERVER CREDENTIALS: ${SERVER_CREDENTIALS}"
                 sh "printenv"
             }
 			
