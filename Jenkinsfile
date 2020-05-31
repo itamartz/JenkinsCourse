@@ -29,7 +29,7 @@ pipeline {
 			}
 		 }
          steps {
-            echo 'Build process..'
+            echo 'ALL stage running'
             sh 'echo "My first pipeline"'
             sh '''
                 echo "By the way, I can do more stuff in here"
@@ -40,13 +40,13 @@ pipeline {
 	  
       stage('Python') {
          steps {
-            echo 'Test process..'
+            echo 'Python stage running'
          }
       }//stage('Python')
 	  
       stage('Deploy') {
          steps {
-            echo 'Deploy process...'
+            echo 'Deploy stage running'
          }
 		 
       }//stage('Deploy')
