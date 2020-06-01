@@ -79,7 +79,7 @@ pipeline {
             }
 	     when {
 			expression {
-				env.Language=="Powershell-TODO" || env.Language=="All-TODO"
+				env.Language=="Powershell" || env.Language=="All-TODO"
 			}
 		 }
          steps {
