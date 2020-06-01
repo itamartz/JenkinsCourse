@@ -1,0 +1,1 @@
+Write-Output "Jenkins Node: $($env:COMPUTERNAME)"
