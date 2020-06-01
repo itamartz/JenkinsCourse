@@ -92,6 +92,10 @@ pipeline {
 
 				Write-Host "Get-ChildItem env:"
 				Get-ChildItem env:
+				
+				Set-Location -Path $env:WORKSPACE
+				Get-ChildItem
+
 			'''
 		}
 		 
