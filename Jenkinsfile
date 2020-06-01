@@ -91,7 +91,7 @@ pipeline {
 				Get-Variable -Scope Global
 
 				Write-Host "Get-ChildItem env:"
-				Get-ChildItem env:
+				(gci env:*).GetEnumerator() | Sort-Object Name | Out-String
 				
 				Set-Location -Path $env:WORKSPACE
 				Get-ChildItem
