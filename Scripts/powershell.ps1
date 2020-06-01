@@ -1,3 +1,1 @@
-
-$scriptName = $MyInvocation.MyCommand.Name
-Write-Output "Run script [ $($scriptName) ] from Jenkins Node: $($env:COMPUTERNAME)"
+Write-Output "Run script [ powershell.ps1 ] from Jenkins Node: $($env:COMPUTERNAME)"
