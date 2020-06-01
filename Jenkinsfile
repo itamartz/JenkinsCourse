@@ -79,16 +79,13 @@ pipeline {
             }
 	     when {
 			expression {
-				env.Language=="Powershell" || env.Language=="All-TODO"
+				env.Language=="Powershell" || env.Language=="All"
 			}
 		 }
          steps {
             echo 'Powershell stage running'
 			
-			powershell '''
-				cd ${WORKSPACE}/scripts/
-				dir
-			'''
+			PowerShell -Command "& {Write-Output "Jenkins Node: $($env:COMPUTERNAME)"}"
          }
 		 
       }//stage('Powershell')
