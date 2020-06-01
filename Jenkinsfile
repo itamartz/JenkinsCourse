@@ -84,8 +84,11 @@ pipeline {
 		 }
          steps {
             echo 'Powershell stage running'
-			cd ${WORKSPACE}/scripts/
-			PowerShell -Command dir
+			
+			powershell '''
+				cd ${WORKSPACE}/scripts/
+				dir
+			'''
          }
 		 
       }//stage('Powershell')
