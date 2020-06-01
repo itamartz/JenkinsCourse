@@ -86,6 +86,12 @@ pipeline {
             echo 'Powershell stage running'
 			powershell '''
 				Write-Output "Jenkins Node: $($env:COMPUTERNAME)"
+				
+				Write-Host "Get-Variable -Scope Global"
+				Get-Variable -Scope Global
+
+				Write-Host "Get-ChildItem env:"
+				Get-ChildItem env:
 			'''
 		}
 		 
