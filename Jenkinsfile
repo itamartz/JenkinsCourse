@@ -87,13 +87,13 @@ pipeline {
 			powershell '''
 				Write-Output "Jenkins Node: $($env:COMPUTERNAME)"
 				
-				Write-Host "Get-Variable -Scope Global"
-				Get-Variable -Scope Global
+				#Write-Host "Get-Variable -Scope Global"
+				#Get-Variable -Scope Global
 
-				Write-Host "Get-ChildItem env:"
-				(gci env:*).GetEnumerator() | Sort-Object Name | Out-String
+				#Write-Host "Get-ChildItem env:"
+				#(gci env:*).GetEnumerator() | Sort-Object Name | Out-String
 				
-				Set-Location -Path $env:WORKSPACE
+				Set-Location -Path (Join-Path ($env:WORKSPACE) -ChildPath Scripts)
 				Get-ChildItem
 
 			'''
