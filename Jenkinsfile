@@ -95,7 +95,7 @@ pipeline {
 				
 				Set-Location -Path (Join-Path ($env:WORKSPACE) -ChildPath Scripts)
 				Get-ChildItem
-				.\powershell.ps1
+				Invoke-Expression -Command (Get-Content -Path powershell.ps1)
 
 			'''
 		}
