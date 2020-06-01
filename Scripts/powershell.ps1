@@ -1,1 +1,1 @@
-Write-Output "Jenkins Node: $($env:COMPUTERNAME)"
+Write-Output "Run from Jenkins Node: $($env:COMPUTERNAME)"
