@@ -62,6 +62,9 @@ pipeline {
       }//stage('Bash')
 	  
 	  stage('C') {
+			agent {
+                label 'slave'
+            }
 	     when {
 			expression {
 				env.Language=="C" || env.Language=="All"
