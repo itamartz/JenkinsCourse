@@ -85,7 +85,7 @@ pipeline {
          steps {
             echo 'Powershell stage running'
 			powershell '''
-				Write-Output "Jenkins Node: $($env:COMPUTERNAME)"
+				Write-Output "from powershell step on Node: $($env:COMPUTERNAME)"
 				
 				#Write-Host "Get-Variable -Scope Global"
 				#Get-Variable -Scope Global
@@ -94,7 +94,7 @@ pipeline {
 				#(gci env:*).GetEnumerator() | Sort-Object Name | Out-String
 				
 				Set-Location -Path (Join-Path ($env:WORKSPACE) -ChildPath Scripts)
-				Get-ChildItem
+				#Get-ChildItem
 				Invoke-Expression -Command (Get-Content -Path powershell.ps1)
 
 			'''
