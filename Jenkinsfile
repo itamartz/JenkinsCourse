@@ -84,9 +84,10 @@ pipeline {
 		 }
          steps {
             echo 'Powershell stage running'
-			
-			PowerShell -Command "& {Write-Output "Jenkins Node: $($env:COMPUTERNAME)"}"
-         }
+			powershell '''
+				Write-Output "Jenkins Node: $($env:COMPUTERNAME)"
+			'''
+		}
 		 
       }//stage('Powershell')
       
